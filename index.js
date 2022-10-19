@@ -15,6 +15,8 @@ const lines = (text) => {
 
 const main = () => {
   const changelog = core.getInput('markdown');
+  const text = core.getInput('text');
+  
   const changelogLines = lines(changelog);
   for (const line of changelogLines) {
     addLineToBlock(line.trim());
@@ -23,14 +25,20 @@ const main = () => {
   if (currentBlock) {
     blocks.push(currentBlock);
   }
-
-  const blocksResponse = createBlocksMain(blocks);
-  var blocksResponseString = JSON.stringify(blocksResponse).split(1,-1);
-  core.setOutput("slack-blocks", blocksResponseString);
+  
+  var ouptut;
+  if (text) {
+    output = JSON.stringify(createBlocksMain(text));
+  } else {
+    output = JSON.stringify(blocks);
+  }
+  
+  core.setOutput("slack-blocks", output);
 }
 
-const createBlocksMain = (block) => {
+const createBlocksMain = (messageText) => {
   return {
+    text: messageText,
     blocks : blocks
   }
 }
