@@ -1,0 +1,12 @@
+name: 'Markdown to Slack Block'
+description: 'Transforms a markdown formatted text to Slack Block'
+inputs:
+  markdown:
+    description: 'The markdown content to transform'
+    required: true
+outputs:
+  slack-blocks: # id of output
+    description: 'The slack-block formatted text'
+runs:
+  using: 'node16'
+  main: 'index.js'

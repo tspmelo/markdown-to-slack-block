@@ -1,0 +1,23 @@
+{
+  "name": "markdown-to-slack-block",
+  "version": "1.0.0",
+  "description": "Transforms an Markdown text to a Slack Block similar text.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigoarias/markdown-to-slack-block.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigoarias/markdown-to-slack-block/issues"
+  },
+  "homepage": "https://github.com/rodrigoarias/markdown-to-slack-block#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0"
+  }
+}
