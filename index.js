@@ -25,7 +25,8 @@ const main = () => {
   }
 
   const blocksResponse = createBlocksMain(blocks);
-  core.setOutput("slack-blocks", JSON.stringify(blocksResponse));
+  var blocksResponseString = JSON.stringify(blocksResponse).split(1,-1);
+  core.setOutput("slack-blocks", blocksResponseString);
 }
 
 const createBlocksMain = (block) => {
