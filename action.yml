@@ -4,6 +4,9 @@ inputs:
   markdown:
     description: 'The markdown content to transform'
     required: true
+  text:
+    description: 'Text for the slack block message'
+    required: false
 outputs:
   slack-blocks: # id of output
     description: 'The slack-block formatted text'
