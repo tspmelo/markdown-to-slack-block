@@ -16,6 +16,11 @@ const lines = (text) => {
 const main = () => {
   const changelog = core.getInput('markdown');
   const text = core.getInput('text');
+  const header = core.getInput('header');
+
+  if (header) {
+    addHeaderBlock(header);
+  }
   
   const changelogLines = lines(changelog);
   for (const line of changelogLines) {
@@ -65,6 +70,17 @@ const addTitleOrSubtitleBlock = (line, isTitle) => {
   }
   
   currentBlock = undefined;
+}
+
+const addHeaderBlock = (header) => {
+  const headerBlock = {
+    "type": "header",
+    "text": {
+      "type": "plain_text",
+      "text": header
+    }
+  };
+  blocks.push(headerBlock);
 }
 
 const addContentBlock = (line) => {
