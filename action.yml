@@ -7,6 +7,9 @@ inputs:
   text:
     description: 'Text for the slack block message'
     required: false
+  header:
+    description: 'A title to be set as a header of the blocks'
+    required: false
 outputs:
   slack-blocks: # id of output
     description: 'The slack-block formatted text'
